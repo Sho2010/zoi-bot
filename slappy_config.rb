@@ -53,7 +53,7 @@ Slappy.configure do |config|
   #   Channel, private group, or IM channel to send message to.
   #   Can be an encoded ID, or a name. See below for more details.
   #
-  config.robot.channel = '#random'
+  config.robot.channel = '#team-0801'
 
   # icon_emoji:
   #   emoji to use as the icon for this message. Overrides icon_url.
