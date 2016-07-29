@@ -1,0 +1,4 @@
+narikiri:
+  image: 'sho2010/zoi-bot:latest'
+  environment:
+    - SLACK_TOKEN=YOUR MESSAGE API TOKEN
