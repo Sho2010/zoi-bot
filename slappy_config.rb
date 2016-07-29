@@ -63,7 +63,7 @@ Slappy.configure do |config|
   # icon_url:
   #    URL to an image to use as the icon for this message
   #
-  # config.robot.icon_url = nil
+  config.robot.icon_url = 'https://67.media.tumblr.com/b3cb91ad44c7f4daff3b6ccf3a310a18/tumblr_ob2lp6oomP1uubj4co1_400.png' 
 
 end
 
