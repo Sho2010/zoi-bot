@@ -4,7 +4,8 @@ def zoi(event)
     "https://40.media.tumblr.com/4656b8918f43f53fcccd9811030525f7/tumblr_nefii3BoOm1qd1ozgo1_500.jpg",
     "http://d320ilho7xw3um.cloudfront.net/10052-685558e9-cf79-4417-9fcb-fd219e8f15e1.jpg",
     "https://67.media.tumblr.com/044137b9dd7823fc26d2a0513fb6a5ef/tumblr_ob2n9hMEfJ1uubj4co1_250.jpg",
-    "https://66.media.tumblr.com/6daf7c901b990bcb82ca2ec78a871b96/tumblr_ob2naaSpSo1uubj4co1_540.jpg"
+    "https://66.media.tumblr.com/6daf7c901b990bcb82ca2ec78a871b96/tumblr_ob2naaSpSo1uubj4co1_540.jpg",
+    "https://66.media.tumblr.com/336a367fc55be8632df5b0610510b84c/tumblr_ob9sjz3yJz1uubj4co1_500.jpg"
   ]
   if event
     say zoi_urls.sample, channel: event.channel 
