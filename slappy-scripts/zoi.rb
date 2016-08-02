@@ -1,4 +1,4 @@
-def zoi(event)
+def zoi(event=nil)
   zoi_urls = [
     "https://41.media.tumblr.com/9cdd4f41d96600d13eddac32da17ba79/tumblr_ngga9kcFVX1qd1ozgo1_500.jpg",
     "https://40.media.tumblr.com/4656b8918f43f53fcccd9811030525f7/tumblr_nefii3BoOm1qd1ozgo1_500.jpg",
@@ -23,7 +23,6 @@ schedule '5 10 * * 2-6' do
 end
 
 schedule '50 18 * * 2-6' do
-  say 'そろそろ帰るぞい'
-  say 'https://66.media.tumblr.com/a217049d609dbee4d742a10dd1000395/tumblr_ob2kbrOaT21uubj4co1_1280.jpg', channel: '#team-0801'
+  say 'そろそろ帰るぞい https://66.media.tumblr.com/a217049d609dbee4d742a10dd1000395/tumblr_ob2kbrOaT21uubj4co1_1280.jpg', channel: '#team-0801'
 end
 
