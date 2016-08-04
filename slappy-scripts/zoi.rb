@@ -10,11 +10,11 @@ def zoi(event=nil)
   if event
     say zoi_urls.sample, channel: event.channel 
   else
-    say zoi_urls.sample
+    say zoi_urls.sample, channel: '#team-0801'
   end
 end
 
-hear 'ぞい' do |event|
+hear '^ぞい$' do |event|
   zoi(event)
 end
 
