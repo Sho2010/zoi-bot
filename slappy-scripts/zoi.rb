@@ -10,7 +10,7 @@ def zoi(event=nil)
   if event
     say zoi_urls.sample, channel: event.channel 
   else
-    say zoi_urls.sample, channel: '#team-0801'
+    say zoi_urls.sample, channel: '#team-0818'
   end
 end
 
@@ -23,6 +23,6 @@ schedule '5 10 * * 2-6' do
 end
 
 schedule '50 18 * * 2-6' do
-  say 'そろそろ帰るぞい https://66.media.tumblr.com/a217049d609dbee4d742a10dd1000395/tumblr_ob2kbrOaT21uubj4co1_1280.jpg', channel: '#team-0801'
+  say 'そろそろ帰るぞい https://66.media.tumblr.com/a217049d609dbee4d742a10dd1000395/tumblr_ob2kbrOaT21uubj4co1_1280.jpg', channel: '#team-0818'
 end
 

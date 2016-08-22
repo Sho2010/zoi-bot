@@ -13,7 +13,7 @@ schedule '5 10 * * *' do
 
   # repo = event.matches[:repo]
   repo = ENV['INTERN_REPO']
-  channel = "#team-0801" 
+  channel = "#team-0818"
   puts repo
   pulls = Github::Github.new.pull_requests repo
 
