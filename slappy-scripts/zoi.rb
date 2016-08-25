@@ -8,7 +8,7 @@ def zoi(event=nil)
     "https://66.media.tumblr.com/336a367fc55be8632df5b0610510b84c/tumblr_ob9sjz3yJz1uubj4co1_500.jpg"
   ]
   if event
-    say zoi_urls.sample, channel: event.channel 
+    say zoi_urls.sample, channel: event.channel
   else
     say zoi_urls.sample, channel: '#team-0818'
   end
@@ -18,11 +18,19 @@ hear '^ぞい$' do |event|
   zoi(event)
 end
 
-schedule '5 10 * * 2-6' do
+schedule '5 10 * * 1-5' do
   zoi
 end
 
-schedule '50 18 * * 2-6' do
+schedule '30 10 * * 1-5' do
+  say '朝会の時間だぞい', channel: '#team-0818'
+end
+
+schedule '30 18 * * 1-5' do
+  say '夕会の時間だぞい', channel: '#team-0818'
+end
+
+schedule '50 18 * * 1-5' do
   say 'そろそろ帰るぞい https://66.media.tumblr.com/a217049d609dbee4d742a10dd1000395/tumblr_ob2kbrOaT21uubj4co1_1280.jpg', channel: '#team-0818'
 end
 

@@ -2,24 +2,12 @@ def is_bot_message?(event)
   event.respond_to?(:subtype) && event.subtype == 'bot_message'
 end
 
-schedule '5 10 * * *' do
-# respond '^PRだして$' do |event|
-  # webhookはスルー
-  # unless is_bot_message?(event)
-  #   # restrictedな人には反応しないようにする
-  #   next if event.user.is_ultra_restricted
-  #   next if event.user.is_restricted
-  # end
-
-  # repo = event.matches[:repo]
+def fetch_pr()
   repo = ENV['INTERN_REPO']
-  channel = "#team-0818"
-  puts repo
   pulls = Github::Github.new.pull_requests repo
 
   unless pulls
-    say "そのリポジトリは見えないぞい", channel: channel
-    next
+    return "#{repo}: リポジトリは見えないぞい"
   end
 
   messages = []
@@ -27,6 +15,25 @@ schedule '5 10 * * *' do
   pulls.each do |pr|
     messages << ":octocat: <#{pr[:url]}|#{pr[:title]}> (#{pr[:user]})\n"
   end
-
-  say messages.join, channel: channel 
+  messages
 end
+
+schedule '5 10 * * *' do
+  channel = "#team-0818"
+  messages = fetch_pr
+  say messages.join, channel: channel
+end
+
+hear '^(PR|pr)[だ|出]して$' do |event|
+  # webhookはスルー
+  unless is_bot_message?(event)
+    # restrictedな人には反応しないようにする
+    next if event.user.is_ultra_restricted
+    next if event.user.is_restricted
+  end
+
+  messages = fetch_pr
+  puts messages
+  say messages.join, channel: event.channel
+end
+
