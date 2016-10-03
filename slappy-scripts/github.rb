@@ -2,8 +2,8 @@ def is_bot_message?(event)
   event.respond_to?(:subtype) && event.subtype == 'bot_message'
 end
 
-def fetch_pr()
-  repo = ENV['INTERN_REPO']
+def fetch_pr(repo=nil)
+  repo ||= ENV['INTERN_REPO']
   pulls = Github::Github.new.pull_requests repo
 
   unless pulls
@@ -18,11 +18,17 @@ def fetch_pr()
   messages
 end
 
-schedule '5 10 * * *' do
-  channel = "#team-0818"
-  messages = fetch_pr
-  say messages.join, channel: channel
-end
+# schedule '5 10 * * *' do
+#   channel = "#team-0818"
+#   messages = fetch_pr
+#   say messages.join, channel: channel
+# end
+#
+# schedule '5 10 * * *' do
+#   channel = "#team-0818"
+#   messages = fetch_pr
+#   say messages.join, channel: channel
+# end
 
 hear '^(PR|pr)[だ|出]して$' do |event|
   # webhookはスルー
